@@ -4,13 +4,14 @@
 Develop the `execute` method within the `ExamSchedulerClass` to schedule health exams at specific clinics. The method should ensure no overlapping exams, verify correct exam types, and adhere to clinic working hours. The class will be instantiated at the entry point, and the `execute` method will follow this signature:
 
 ```
-    def execute(employee_id: UUID, clinic_id: UUID, exam_type: ExamTypeEnum, exam_start: datetime) -> tuple(bool, str)
+    def execute(employee_id: UUID, clinic_id: UUID, exam_type: ExamTypeEnum, exam_start: datetime) -> tuple[bool, str]
 ```
 
 ## Core Functionality
 
 ### System Setup
-- An entry point is provided that calls `ExamSchedulerClass.execute()`.
+- An entry point is provided in the `main.py` file that calls `ExamSchedulerClass.execute()`.
+- **Architecture Flexibility**: The project files are initially unstructured with regard to software architecture. You are encouraged to implement any architectural style or design pattern that you believe best suits the project’s needs. Feel free to reorganize, refactor, and structure the codebase to showcase your architectural expertise and coding proficiency.
 
 ### ExamSchedulerClass
 - **Method**: `execute`
