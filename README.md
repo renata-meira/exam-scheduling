@@ -26,6 +26,54 @@ Develop the `execute` method within the `ExamSchedulerClass` to schedule health 
 - **Schedule Conflict Check**: Prevent overlapping exams at the same clinic.
 - **Working Hours Validation**: Confirm scheduling within clinic operating hours.
 
+### Functionality Examples for `ExamSchedulerClass.execute()`
+
+The following examples illustrate how the `ExamSchedulerClass.execute()` method processes various scheduling scenarios. These examples help developers understand expected behaviors and test the system under different conditions.
+
+#### 1. Successful Exam Scheduling
+**Input:**
+- **Employee ID**: `UUID('12345678-1234-5678-1234-567812345678')`
+- **Clinic ID**: `UUID('87654321-4321-8765-4321-567843210987')`
+- **Exam Type**: `ExamTypeEnum.GENERAL_CHECKUP`
+- **Exam Start Time**: `datetime(2023, 10, 15, 14, 0)`
+
+**Output:**
+- **Result**: `True`
+- **Message**: `"Exam scheduled successfully"`
+
+**Description**: This test verifies that the system can successfully schedule an exam when no conflicts are present and all conditions for a valid appointment are met.
+
+#### 2. Exam Scheduling Outside Clinic Hours
+**Input:**
+- **Employee ID**: `UUID('12345678-1234-5678-1234-567812345678')`
+- **Clinic ID**: `UUID('87654321-4321-8765-4321-567843210987')`
+- **Exam Type**: `ExamTypeEnum.GENERAL_CHECKUP`
+- **Exam Start Time**: `datetime(2023, 10, 15, 6, 0)`  // 6 AM, before clinic opens
+
+**Output:**
+- **Result**: `False`
+- **Message**: `"Exam cannot be scheduled outside working hours"`
+
+**Description**: This scenario tests the system's ability to enforce clinic operational hours by rejecting an exam scheduled before the clinic opens.
+
+#### 3. Exam Scheduling with Time Conflicts
+**Input:**
+- **Employee ID**: `UUID('12345678-1234-5678-1234-567812345678')`
+- **Clinic ID**: `UUID('87654321-4321-8765-4321-567843210987')`
+- **Exam Type**: `ExamTypeEnum.GENERAL_CHECKUP`
+- **Exam Start Time**: `datetime(2023, 10, 15, 14, 30)`  // Overlaps with another scheduled exam
+
+**Output:**
+- **Result**: `False`
+- **Message**: `"Exam cannot be scheduled due to a time conflict"`
+
+**Description**: This example checks the system's capability to detect overlapping appointments and prevent double-booking within the same clinic.
+
+### Summary
+
+These examples are designed to provide clear and actionable test scenarios for developers to ensure the `ExamSchedulerClass` behaves as expected under various operational constraints. They also serve as practical guides for both development and QA testing, ensuring thorough validation of the scheduling functionality.
+
+
 ### Data Structures
 - **Clinics**: Include working hours, available exams, and scheduled exams.
 - **Employees**: Contain necessary details for exam scheduling.
