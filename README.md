@@ -1,7 +1,7 @@
 # Descrição do Projeto: Sistema de Agendamento de Exames para Funcionários
 
 ## Objetivo
-Desenvolver o método `execute` dentro da `ExamSchedulerClass` para agendar exames de saúde em clínicas específicas. O método deve garantir que não haja sobreposição de exames, verificar os tipos de exames corretos e aderir ao horário de funcionamento das clínicas. A classe será instanciada no ponto de entrada, e o método `execute` seguirá esta assinatura:
+Desenvolver o método `execute` dentro da `ExamSchedulerClass` para agendar exames de saúde em clínicas específicas. O método deve garantir que não haja sobreposição de exames, verificar os tipos de exames corretos e respeitar o horário de funcionamento das clínicas. A classe será instanciada no ponto de entrada e o método `execute` seguirá esta assinatura:
 
 ```python
 def execute(employee_id: UUID, clinic_id: UUID, exam_type: ExamTypeEnum, exam_start: datetime) -> tuple[bool, str]
@@ -10,7 +10,7 @@ def execute(employee_id: UUID, clinic_id: UUID, exam_type: ExamTypeEnum, exam_st
 ## Funcionalidade Principal
 
 ### Configuração do Sistema
-- Um ponto de entrada é fornecido no arquivo `main.py` que chama `ExamSchedulerClass.execute()`.
+- Um ponto de entrada é fornecido no arquivo `main.py` chamado `ExamSchedulerClass.execute()`.
 - **Flexibilidade de Arquitetura**: Os arquivos do projeto estão inicialmente desestruturados em relação à arquitetura de software. Você é encorajado a implementar qualquer estilo arquitetônico ou padrão de design que julgue mais adequado às necessidades do projeto. Sinta-se à vontade para reorganizar, refatorar e estruturar o código para demonstrar sua expertise arquitetônica e proficiência em codificação.
 
 ### ExamSchedulerClass
