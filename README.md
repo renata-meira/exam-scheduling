@@ -86,6 +86,7 @@ Estes exemplos foram projetados para fornecer cenários de teste claros e acion�
 - **Qualidade do Código**: Foco na legibilidade e manutenibilidade.
 - **Desenho do Algoritmo**: Avaliar eficiência e correção.
 - **Tratamento de Erros**: Avaliar a robustez no tratamento de casos extremos e fornecimento de feedback.
+- **Cobertura de Código**: Avaliar a documentação e automação dos testes de unidade.
 
 ## Duração do Projeto
 1 semana
